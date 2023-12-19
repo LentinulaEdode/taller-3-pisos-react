@@ -11,7 +11,7 @@ function App() {
   const [bedrooms, setBedrooms] = useState('');
   const [restrooms, setRestrooms] = useState('');
   const [surface, setSurface] = useState('');
-  const [moment, setMoment] = useState('home');
+  const [moment, setMoment] = useState('welcome');
 
   const handleApply = () => {
     if (bedrooms === '' || restrooms === '' || surface === 0) {
@@ -36,6 +36,14 @@ function App() {
   return (
     
     <div className="App">
+      {moment === 'welcome' &&
+        <>
+          <div className='welcome'>
+            <img src="./public/surface.png" alt="Bienvenida" />
+            <button type='button' className='btn btn-primary' onClick={() => setMoment('home')}>EMPEZAR</button>
+          </div>
+        </>
+      }
       {moment === 'home' &&  
       <>
       <div id='user-card'>
