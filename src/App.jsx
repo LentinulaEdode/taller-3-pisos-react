@@ -1,42 +1,36 @@
 import { useState } from 'react'
 import './App.css'
 
+import Restrooms from './components/Restrooms';
+import Bedrooms from './components/Bedrooms';
+import Surface from './components/Surface';
+import Provinces from './components/Provinces';
+
 function App() {
-  const [inputs, setInputs] = useState({
-    surface: '',
-    bedrooms: '',
-    restrooms: ''
-  });
+  const [bedrooms, setBedrooms] = useState(0);
+  const [restrooms, setRestrooms] = useState(0);
+  const [surface, setSurface] = useState([0, 0]);
+  const [moment, setMoment] = useState('home');
 
-  const [prediction, setPrediction] = useState(null);
+  const handleRestrooms = () => {
+    setMoment('restrooms');
+  }
 
-  const handleChange = (e) => {
-    setInputs({
-      ...inputs,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleBedrooms = () => {
+    setMoment('bedrooms');
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const response = await fetch("", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(inputs)
-    });
-
-    const data = await response.json();
-
-    setPrediction(data.prediction);
-  };
+  const handleSurface = () => {
+    setMoment('surface');
+  }
 
   return (
+    
     <div className="App">
+      {moment === 'home' &&  
+      <>
       <div id='user-card'>
-        <div className='user-photo-div'>
+        <div className='user-photo-div' >
           <img className='foto-user' src="./public/berta.jpg" alt="Foto de perfil del usuario" />
         </div>
         <h3>¡Hola Berta!</h3>
@@ -45,23 +39,43 @@ function App() {
       <div className='main-container'>
         <h1>Crear modelo predictivo</h1>
 
-        <div className='restroom boton'>
+        <div className='restroom boton'
+        onClick={() => {
+          handleRestrooms();
+        }
+        }
+        >
           <img src="./public/restroom.png" alt="Botón baños" />
           <h3>NÚMERO DE BAÑOS</h3>
         </div>
 
-        <div className='bedroom boton'>
+        <div className='bedroom boton' onClick={() => {
+          handleBedrooms();
+        }
+        }>
           <img src="./public/bedroom.png" alt="Botón habitaciones" />
           <h3>NÚMERO DE HABITACIONES</h3>
         </div>
 
-        <div className='surface boton'>
+        <div className='surface boton' onClick={() => {
+          handleSurface();
+        }
+        }
+        >
           <img src="./public/surface.png" alt="Botón superficie" />
           <h3>SUPERFICIE</h3>
+          <p>{'Entre ' + surface[0] + ' y ' + surface[1]}</p>
         </div>
 
       </div>
-    </div>
+      </>
+      }
+
+      {moment === 'restrooms' && <Restrooms setRestrooms={setRestrooms} setMoment={setMoment} />}
+      {moment === 'bedrooms' && <Bedrooms setBedrooms={setBedrooms} setMoment={setMoment} />}
+      {moment === 'surface' && <Surface setSurface={setSurface} setMoment={setMoment} />}
+
+      </div>
   );
 }
 
