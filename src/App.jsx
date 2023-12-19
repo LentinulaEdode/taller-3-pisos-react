@@ -104,10 +104,10 @@ function App() {
         </div>
 
       </div>
-      </div>
       <button type='button' className='btn btn-primary aplicar-button'
         onClick={() => handleApply()}>APLICAR</button>
       </>
+      </div>
       }
 
       {moment === 'restrooms' && <Restrooms setRestrooms={setRestrooms} setMoment={setMoment} />}
