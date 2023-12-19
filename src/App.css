@@ -125,7 +125,7 @@ body {
 }
 
 .bedrooms-submit-button {
-  background-color: #ff0000;
+  background-color: #0f32ba;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -135,7 +135,7 @@ body {
 }
 
 .restroom-submit-button {
-  background-color: #ff0000;
+  background-color: #0f32ba;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -145,7 +145,7 @@ body {
 }
 
 .surface-submit-button {
-  background-color: #ff0000;
+  background-color: #0f32ba;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -155,19 +155,19 @@ body {
 }
 
 .bedrooms-submit-button:hover {
-  background-color: #b30000;
+  background-color: #0f32ba;
 }
 
 .restroom-submit-button:hover {
-  background-color: #b30000;
+  background-color: #0f32ba;
 }
 
 .surface-submit-button:hover {
-  background-color: #b30000;
+  background-color: #0f32ba;
 }
 
 .aplicar-button {
-  background-color: #b30000;
+  background-color: #0f32ba;
   color: #fff;
   padding: 10px 15px;
   border: none;
