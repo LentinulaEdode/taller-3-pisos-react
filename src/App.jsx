@@ -97,7 +97,8 @@ function App() {
 
       </div>
       </div>
-      <button type='button' className='btn btn-primary' onClick={() => handleApply()}>APLICAR</button>
+      <button type='button' className='btn btn-primary' className="aplicar-button"
+        onClick={() => handleApply()}>APLICAR</button>
       </>
       }
 

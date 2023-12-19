@@ -20,17 +20,20 @@ const Result = ({ bedrooms, setBedrooms, restrooms, setRestrooms, surface, setSu
 
     return (
         <>
-            <img src="./public/back.png" alt="Botón volver" onClick={() =>{
+            <img src="./public/back.png" alt="Botón volver" className="back-button"
+                onClick={() =>{
                 setBedrooms('');
                 setRestrooms('');
                 setSurface('');
                 setMoment('home')}} />
-            <div className='result'>
+
+            <div className='result-container'>
                 {loading && <img src="./public/loading.gif" alt="loading" />}
-                <p>
+                <p className="result-text">
                     {result}
                 </p>
             </div>
+
         </>
     )
 }
