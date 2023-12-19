@@ -35,24 +35,32 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TuTasa</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="surface">Surface:</label>
-        <input type="text" id="surface" name="surface" value={inputs.surface} onChange={handleChange} />
+      <div id='user-card'>
+        <div className='user-photo-div'>
+          <img className='foto-user' src="./public/berta.jpg" alt="Foto de perfil del usuario" />
+        </div>
+        <h3>¡Hola Berta!</h3>
+      </div>
 
-        <label htmlFor="bedrooms">Bedrooms:</label>
-        <input type="text" id="bedrooms" name="bedrooms" value={inputs.bedrooms} onChange={handleChange} />
+      <div className='main-container'>
+        <h1>Crear modelo predictivo</h1>
 
-        <label htmlFor="restrooms">Restrooms:</label>
-        <input type="text" id="restrooms" name="restrooms" value={inputs.restrooms} onChange={handleChange} />
+        <div className='restroom boton'>
+          <img src="./public/restroom.png" alt="Botón baños" />
+          <h3>NÚMERO DE BAÑOS</h3>
+        </div>
 
-        <button className='btn btn-warning' type="submit">Calcula</button>
-        <button type='button' className='btn btn-warning'>HOLA</button>
-      </form>
+        <div className='bedroom boton'>
+          <img src="./public/bedroom.png" alt="Botón habitaciones" />
+          <h3>NÚMERO DE HABITACIONES</h3>
+        </div>
 
-      {prediction && (
-        <p>Predicted Price: {prediction}</p>
-      )}
+        <div className='surface boton'>
+          <img src="./public/surface.png" alt="Botón superficie" />
+          <h3>SUPERFICIE</h3>
+        </div>
+
+      </div>
     </div>
   );
 }
