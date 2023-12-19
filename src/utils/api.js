@@ -1,4 +1,4 @@
-const apiFetch = async (surface, bedrooms, restrooms) => {
+const apiFetch = async (restrooms, bedrooms, surface) => {
     try {
         if (surface === "" || bedrooms === "" || restrooms === "") {
             throw new Error("Please fill all the fields");
@@ -12,7 +12,8 @@ const apiFetch = async (surface, bedrooms, restrooms) => {
         const response = await fetch(
             `https://ibaivalente.pythonanywhere.com/predict?surface=${surface}&bedrooms=${bedrooms}&restrooms=${restrooms}`
         );
-        const data = await response.json();
+        //gestionar texto crudo
+        const data = await response.text();
         return data;
     } catch (error) {
         return error.message;

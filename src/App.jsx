@@ -4,12 +4,22 @@ import './App.css'
 import Restrooms from './components/Restrooms';
 import Bedrooms from './components/Bedrooms';
 import Surface from './components/Surface';
+import Result from './components/Result';
 
 function App() {
+  const [error, setError] = useState('');
   const [bedrooms, setBedrooms] = useState('');
   const [restrooms, setRestrooms] = useState('');
-  const [surface, setSurface] = useState([0, 0]);
+  const [surface, setSurface] = useState('');
   const [moment, setMoment] = useState('home');
+
+  const handleApply = () => {
+    if (bedrooms === '' || restrooms === '' || surface === 0) {
+      setError('Debes rellenar todos los campos');
+    } else {
+      setMoment('result');
+    }
+  }
 
   const handleRestrooms = () => {
     setMoment('restrooms');
@@ -36,6 +46,7 @@ function App() {
       </div>
 
       <div className='main-container'>
+      <div className='error'>{error}</div>
         <h1 className='model-title'>Crear modelo predictivo</h1>
 
       <div className='button-grid'>
@@ -76,9 +87,9 @@ function App() {
         >
           <img src="./public/surface.png" alt="Botón superficie" />
           <div className='card-text'>
-            {surface[0] !== 0 && surface[1] !== 0 && <>
+            {surface !== '' && <>
               <img className='checked' src="./public/checked.png" alt="checked" />
-              <h2>{surface[0]} m<sup>2</sup> - {surface[1]} m<sup>2</sup></h2>
+              <h2>{surface} m<sup>2</sup></h2>
             </>}
             <h3>SUPERFICIE</h3>
           </div>
@@ -86,13 +97,15 @@ function App() {
 
       </div>
       </div>
-
+      <button type='button' className='btn btn-primary' onClick={() => handleApply()}>APLICAR</button>
       </>
       }
 
       {moment === 'restrooms' && <Restrooms setRestrooms={setRestrooms} setMoment={setMoment} />}
       {moment === 'bedrooms' && <Bedrooms setBedrooms={setBedrooms} setMoment={setMoment} />}
       {moment === 'surface' && <Surface setSurface={setSurface} setMoment={setMoment} />}
+      {moment === 'result' && <Result bedrooms={bedrooms} setBedrooms={setBedrooms} restrooms={restrooms} setRestrooms={setRestrooms} surface={surface} setSurface={setSurface} moment={moment} setMoment={setMoment} />}
+
 
       </div>
   );
