@@ -43,8 +43,9 @@ function App() {
       </div>
 
       <div className='main-container'>
-        <h1>Crear modelo predictivo</h1>
+        <h1 className='model-title'>Crear modelo predictivo</h1>
 
+      <div className='button-grid'>
         <div className='restroom boton'>
           <img src="./public/restroom.png" alt="Botón baños" />
           <h3>NÚMERO DE BAÑOS</h3>
@@ -60,6 +61,12 @@ function App() {
           <h3>SUPERFICIE</h3>
         </div>
 
+        <div className='location boton'>
+          <img src="./public/surface.png" alt="Botón localización" />
+          <h3>LOCALIZACIÓN</h3>
+        </div>
+
+      </div>
       </div>
     </div>
   );
