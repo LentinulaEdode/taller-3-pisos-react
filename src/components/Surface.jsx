@@ -10,7 +10,8 @@ return (
             <label htmlFor="surfaceMetters">Superficie</label>
             <input type="number" name="surfaceMetters" id="surfaceMetters" value={surfaceMetters} onChange={(e) => setSurfaceMetters(e.target.value)} />
 
-            <button onClick={() => {
+            <button className="surface-submit-button"
+                onClick={() => {
                 setSurface(surfaceMetters);
                 setMoment('home')
             }
@@ -18,7 +19,7 @@ return (
             >Siguiente</button>
             </form>
         </>
-)
-    }
+    )
+}
 
 export default Surface;
