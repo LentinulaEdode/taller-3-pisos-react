@@ -106,10 +106,10 @@ function App() {
       </div>
       <button type='button' className='btn btn-primary aplicar-button'
         onClick={() => handleApply()}>APLICAR</button>
-      </>
+      
       </div>
+      </>
       }
-
       {moment === 'restrooms' && <Restrooms setRestrooms={setRestrooms} setMoment={setMoment} />}
       {moment === 'bedrooms' && <Bedrooms setBedrooms={setBedrooms} setMoment={setMoment} />}
       {moment === 'surface' && <Surface setSurface={setSurface} setMoment={setMoment} />}
