@@ -210,3 +210,10 @@ body {
   transform: translateX(-50%);
   margin-bottom: 20px;
 }
+
+.flechita {
+  width: 30px;
+  height: 40px;
+  margin-left: 15px;
+  margin-top: 20px;
+}

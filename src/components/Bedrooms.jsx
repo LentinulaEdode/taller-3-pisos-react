@@ -5,7 +5,7 @@ const Bedrooms = ({bedrooms, setBedrooms, moment, setMoment}) => {
 
     return (
         <>
-        <img src="./public/back.png" alt="Botón volver" onClick={() => setMoment('home')}/>
+        <img src="./public/back.png" className="flechita" alt="Botón volver" onClick={() => setMoment('home')}/>
             <form action="" className="bedrooms-form">
                 <label htmlFor="numberOfBedrooms">Número de habitaciones</label>
                 <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="1" onChange={(e) => setNumberOfBedrooms(e.target.value)}/>
