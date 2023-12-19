@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Housing Price Prediction</h1>
+      <h1>TuTasa</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="surface">Surface:</label>
         <input type="text" id="surface" name="surface" value={inputs.surface} onChange={handleChange} />
@@ -46,7 +46,8 @@ function App() {
         <label htmlFor="restrooms">Restrooms:</label>
         <input type="text" id="restrooms" name="restrooms" value={inputs.restrooms} onChange={handleChange} />
 
-        <button type="submit">Predict</button>
+        <button className='btn btn-warning' type="submit">Calcula</button>
+        <button type='button' className='btn btn-warning'>HOLA</button>
       </form>
 
       {prediction && (
