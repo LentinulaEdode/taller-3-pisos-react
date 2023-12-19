@@ -39,7 +39,7 @@ function App() {
       {moment === 'welcome' &&
         <>
           <div className='welcome'>
-            <img src="./public/surface.png" alt="Bienvenida" />
+            <img src="surface.png" alt="Bienvenida" />
             <button type='button' className='btn btn-primary' onClick={() => setMoment('home')}>EMPEZAR</button>
           </div>
         </>
@@ -48,7 +48,7 @@ function App() {
       <>
       <div id='user-card'>
         <div className='user-photo-div' >
-          <img className='foto-user' src="./public/berta.jpg" alt="Foto de perfil del usuario" />
+          <img className='foto-user' src="berta.jpg" alt="Foto de perfil del usuario" />
         </div>
         <h3>¡Hola Berta!</h3>
       </div>
@@ -64,10 +64,10 @@ function App() {
         }
         }
         >
-          <img src="./public/restroom.png" alt="Botón baños" />
+          <img src="restroom.png" alt="Botón baños" />
           <div className='card-text'>
             {restrooms !== '' && <>
-              <img className='checked' src="./public/checked.png" alt="checked" />
+              <img className='checked' src="checked.png" alt="checked" />
               <h2>{restrooms}</h2>
             </>}
             <h3>NÚMERO DE BAÑOS</h3>
@@ -78,10 +78,10 @@ function App() {
           handleBedrooms();
         }
         }>
-          <img src="./public/bedroom.png" alt="Botón habitaciones" />
+          <img src="bedroom.png" alt="Botón habitaciones" />
           <div className='card-text'>
             {bedrooms !== '' && <>
-              <img className='checked' src="./public/checked.png" alt="checked" />
+              <img className='checked' src="checked.png" alt="checked" />
               <h2>{bedrooms}</h2>
             </>}
             <h3>NÚMERO DE HABITACIONES</h3>
@@ -93,10 +93,10 @@ function App() {
         }
         }
         >
-          <img src="./public/surface.png" alt="Botón superficie" />
+          <img src="surface.png" alt="Botón superficie" />
           <div className='card-text'>
             {surface !== '' && <>
-              <img className='checked' src="./public/checked.png" alt="checked" />
+              <img className='checked' src="checked.png" alt="checked" />
               <h2>{surface} m<sup>2</sup></h2>
             </>}
             <h3>SUPERFICIE</h3>
@@ -105,7 +105,7 @@ function App() {
 
       </div>
       </div>
-      <button type='button' className='btn btn-primary' className="aplicar-button"
+      <button type='button' className='btn btn-primary aplicar-button'
         onClick={() => handleApply()}>APLICAR</button>
       </>
       }
