@@ -6,7 +6,7 @@ const Bedrooms = ({bedrooms, setBedrooms, moment, setMoment}) => {
     return (
         <>
         <img src="./public/back.png" alt="Botón volver" onClick={() => setMoment('home')}/>
-            <form action="">
+            <form action="" className="bedrooms-form">
                 <label htmlFor="numberOfBedrooms">Número de habitaciones</label>
                 <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="1 habitación" onChange={(e) => setNumberOfBedrooms(e.target.value)}/>
                 <label htmlFor="numberOfBedrooms">1</label>
@@ -17,12 +17,13 @@ const Bedrooms = ({bedrooms, setBedrooms, moment, setMoment}) => {
                 <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="4 habitaciones" onChange={(e) => setNumberOfBedrooms(e.target.value)} />
                 <label htmlFor="numberOfBedrooms">4</label>
 
-                <button onClick={() => {
+                <button  className="bedrooms-submit-button"
+                onClick={() => {
                 setBedrooms(numberOfBedrooms);
                 setMoment('home')
-            }
-            }
-            >Siguiente</button>
+                }}
+            >Siguiente
+            </button>
             </form>
         </>
     )

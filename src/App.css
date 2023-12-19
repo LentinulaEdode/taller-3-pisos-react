@@ -81,8 +81,87 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .checked  {
   width: 40px !important;
+}
+
+.bedrooms-form, .restroom-form, .surface-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.bedrooms-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.restroom-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.surface-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.bedrooms-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.restroom-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.surface-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.bedrooms-submit-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.restroom-submit-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.surface-submit-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.bedrooms-submit-button:hover {
+  background-color: #b30000;
+}
+
+.restroom-submit-button:hover {
+  background-color: #b30000;
+}
+
+.surface-submit-button:hover {
+  background-color: #b30000;
 }
