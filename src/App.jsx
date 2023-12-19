@@ -4,11 +4,10 @@ import './App.css'
 import Restrooms from './components/Restrooms';
 import Bedrooms from './components/Bedrooms';
 import Surface from './components/Surface';
-import Provinces from './components/Provinces';
 
 function App() {
-  const [bedrooms, setBedrooms] = useState(0);
-  const [restrooms, setRestrooms] = useState(0);
+  const [bedrooms, setBedrooms] = useState('');
+  const [restrooms, setRestrooms] = useState('');
   const [surface, setSurface] = useState([0, 0]);
   const [moment, setMoment] = useState('home');
 
@@ -47,7 +46,13 @@ function App() {
         }
         >
           <img src="./public/restroom.png" alt="Botón baños" />
-          <h3>NÚMERO DE BAÑOS</h3>
+          <div className='card-text'>
+            {restrooms !== '' && <>
+              <img className='checked' src="./public/checked.png" alt="checked" />
+              <h2>{restrooms}</h2>
+            </>}
+            <h3>NÚMERO DE BAÑOS</h3>
+          </div>
         </div>
 
         <div className='bedroom boton' onClick={() => {
@@ -55,7 +60,13 @@ function App() {
         }
         }>
           <img src="./public/bedroom.png" alt="Botón habitaciones" />
-          <h3>NÚMERO DE HABITACIONES</h3>
+          <div className='card-text'>
+            {bedrooms !== '' && <>
+              <img className='checked' src="./public/checked.png" alt="checked" />
+              <h2>{bedrooms}</h2>
+            </>}
+            <h3>NÚMERO DE HABITACIONES</h3>
+          </div>
         </div>
 
         <div className='surface boton' onClick={() => {
@@ -64,12 +75,13 @@ function App() {
         }
         >
           <img src="./public/surface.png" alt="Botón superficie" />
-          <h3>SUPERFICIE</h3>
-        </div>
-
-        <div className='location boton'>
-          <img src="./public/surface.png" alt="Botón localización" />
-          <h3>LOCALIZACIÓN</h3>
+          <div className='card-text'>
+            {surface[0] !== 0 && surface[1] !== 0 && <>
+              <img className='checked' src="./public/checked.png" alt="checked" />
+              <h2>{surface[0]} m<sup>2</sup> - {surface[1]} m<sup>2</sup></h2>
+            </>}
+            <h3>SUPERFICIE</h3>
+          </div>
         </div>
 
       </div>

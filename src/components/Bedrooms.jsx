@@ -1,19 +1,28 @@
 import { useState } from "react";
 
-const Bedrooms = (props) => {
+const Bedrooms = ({bedrooms, setBedrooms, moment, setMoment}) => {
+    const [numberOfBedrooms, setNumberOfBedrooms] = useState('');
 
     return (
         <>
+        <img src="./public/back.png" alt="Botón volver" onClick={() => setMoment('home')}/>
             <form action="">
-                <label htmlFor="bedrooms">Número de habitaciones</label>
-                <input type="radio" name="bedrooms" id="bedrooms" value="1 habitación" />
-                <label htmlFor="bedrooms">1</label>
-                <input type="radio" name="bedrooms" id="bedrooms" value="2 habitaciones" />
-                <label htmlFor="bedrooms">2</label>
-                <input type="radio" name="bedrooms" id="bedrooms" value="3 habitaciones" />
-                <label htmlFor="bedrooms">3</label>
-                <input type="radio" name="bedrooms" id="bedrooms" value="4 habitaciones" />
-                <label htmlFor="bedrooms">4</label>
+                <label htmlFor="numberOfBedrooms">Número de habitaciones</label>
+                <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="1 habitación" onChange={(e) => setNumberOfBedrooms(e.target.value)}/>
+                <label htmlFor="numberOfBedrooms">1</label>
+                <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="2 habitaciones" onChange={(e) => setNumberOfBedrooms(e.target.value)}/>
+                <label htmlFor="numberOfBedrooms">2</label>
+                <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="3 habitaciones" onChange={(e) => setNumberOfBedrooms(e.target.value)}/>
+                <label htmlFor="numberOfBedrooms">3</label>
+                <input type="radio" name="numberOfBedrooms" id="numberOfBedrooms" value="4 habitaciones" onChange={(e) => setNumberOfBedrooms(e.target.value)} />
+                <label htmlFor="numberOfBedrooms">4</label>
+
+                <button onClick={() => {
+                setBedrooms(numberOfBedrooms);
+                setMoment('home')
+            }
+            }
+            >Siguiente</button>
             </form>
         </>
     )
