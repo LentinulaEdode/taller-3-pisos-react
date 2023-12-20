@@ -10,7 +10,7 @@ const apiFetch = async (restrooms, bedrooms, surface) => {
             throw new Error("Please enter a surface between 0 and 1000, and bedrooms and restrooms between 0 and 10");
         }
         const response = await fetch(
-            `https://ibaivalente.pythonanywhere.com/predict?surface=${surface}&bedrooms=${bedrooms}&restrooms=${restrooms}`
+            `https://ibaivalente.pythonanywhere.com/predict?surface=${surface}&bedrooms=${bedrooms}&restrooms=${restrooms}&provincia=Bizkaia`
         );
         //gestionar texto crudo
         const data = await response.text();

@@ -20,7 +20,7 @@ const Result = ({ bedrooms, setBedrooms, restrooms, setRestrooms, surface, setSu
 
     return (
         <>
-            <img src="back.png" alt="Botón volver" className="back-button"
+            <img src="back.png" alt="Botón volver" className="back-button flechita"
                 onClick={() =>{
                 setBedrooms('');
                 setRestrooms('');
